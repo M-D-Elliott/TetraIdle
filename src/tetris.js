@@ -1,11 +1,8 @@
-createArena()
-const arena = createMatrix(arena_w, arena_h);
-
 function resetGame() {
-  arena.forEach(row => row.fill(0));
+  game_canvas.field.forEach(row => row.fill(0));
   player.score = 0;
   updateScore();
-  playerReset();
+  populateQueue();
 }
 
 function update(time = 0) {
@@ -15,12 +12,12 @@ function update(time = 0) {
   if(dropCounter > dropInterval) {
     playerDrop();
   }
-  draw();
+  draw(game_canvas, player.matrix);
   requestAnimationFrame(update);
 }
 
 function updateScore() {
-  stats.innerText = player.score;
+  score.innerText = player.score;
 }
 
 document.addEventListener('keydown', e => {

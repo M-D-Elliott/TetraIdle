@@ -5,15 +5,26 @@
 </head>
 <body>
   <div id="TetraIdle">
-    <div id="stats" width="240">0</div>
-    <canvas id="tetra-canvas" width="240"></canvas>
-    <script src="globals.js"></script>
-    <script src="pieces.js"></script>
-    <script src="player.js"></script>
-    <script src="arena.js"></script>
-    <script src="draw.js"></script>
-    <script src="tetris.js"></script>
-  </div>
+    <div class="top-panel">
+      <div class="title">Shop</div>
+      <div id="stats">Score:<span id="score">0</span></div>
+      <div class="title">Queue</div>
+    </div>
+    <div id="Shop" class="sidebar sidebar-left">
+    </div>
+    <div class="game-container">
+      <canvas id="game" width="240"></canvas>
+    </div>
+    <canvas id="Queue" class="sidebar sidebar-right"></canvas>
+  <script src="globals.js"></script>
+  <script src="draw.js"></script>
+  <script src="pieces.js"></script>
+  <script src="arena.js"></script>
+  <script src="queue.js"></script>
+  <script src="canvas.js"></script>
+  <script src="player.js"></script>
+  <script src="tetris.js"></script></div>
   <!-- <script src ="tetraIdle.min.js"></script> -->
+  </div>
 </body>
 </html>

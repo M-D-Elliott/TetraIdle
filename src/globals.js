@@ -1,20 +1,18 @@
-let arena_w = 12;
+let arena_w = 6;
 let arena_h = 20;
 const scale = 20;
 
-const canvas = document.getElementById('tetra-canvas');
-const stats = document.getElementById('stats');
-const container = document.getElementById('TetraIdle');
-
-canvas.width = arena_w * scale;
-canvas.height = arena_h * scale;
-console.log(canvas.width);
-const context = canvas.getContext('2d');
-context.scale(scale, scale);
-
 let dropCounter = 0;
-let dropInterval = 1000;
+let dropInterval = 400;
 let lastTime = 0;
+let score_multi = 1;
+let max_queue = 5;
+
+const score = document.getElementById('score');
+
+let _allPieces = [];
+queue = [];
+queue_skip = 4;
 
 const colors = [
   null,

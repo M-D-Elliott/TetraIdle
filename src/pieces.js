@@ -34,9 +34,29 @@ const piecesRepository = {
   [0, 7, 7],
   [0, 0, 0]
 ],
+// 'i' : [
+//   [0, 1],
+//   [0, 1],
+// ],
+// 'l' : [
+//   [1, 0, 0],
+//   [1, 0, 0],
+//   [1, 0, 0],
+// ],
 }
 
-const _allPieces = Object.keys(piecesRepository);
+// for(var key in piecesRepository) {
+//   _allPieces.push(key);
+//   queue_card = blank_queue_card.cloneNode(true);
+//   queue_card.removeAttribute('id');
+//   queue_card.title = key;
+//   context = queue_card.getContext('2d');
+//   context.scale(scale, scale);
+//   drawMatrix(context, piecesRepository[key], {x:0, y:0});
+//   _queuePieces[key] = queue_card;
+// }
+
+_allPieces = Object.keys(piecesRepository);
 
 function createPiece(type) {
   piece = piecesRepository[type];
@@ -44,5 +64,5 @@ function createPiece(type) {
 }
 
 function getRandomPiece() {
-  return createPiece(_allPieces[_allPieces.length * Math.random() | 0])
+  return _allPieces[_allPieces.length * Math.random() | 0]
 }
